@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Todo_List" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item  name="colorPrimary">@color/bluepurle</item>
+        <item name="colorSecondary">@color/bluepurleprim</item>
+        <item name="colorSecondaryFixed">@color/bluepurplesec</item>
+        <item name="colorPrimaryFixed">@color/bluepurplethird</item>
+
+    </style>
+
+    <style name="Theme.Todo_List" parent="Base.Theme.Todo_List"/>
+</resources>
