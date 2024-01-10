@@ -33,9 +33,7 @@ Follow these steps to run the Todo-List Android app:
 3.Build and run the app on an emulator or physical device.
 
 4.Make sure to include the SQLite library in your app.
-```bash
-   ##### - implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+' 
-
+   - implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 
 ## Image Gallery
 
