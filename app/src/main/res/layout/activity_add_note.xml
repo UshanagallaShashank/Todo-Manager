@@ -34,7 +34,7 @@
                 android:layout_marginTop="-17dp" android:layout_marginEnd="15dp"/>
         <EditText
                 android:id="@+id/titleEditText"
-                android:layout_width="357dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Enter the title"
                 android:padding="12dp"
@@ -48,7 +48,7 @@
 
         <EditText
                 android:id="@+id/contentEditText"
-                android:layout_width="374dp"
+                android:layout_width="match_parent"
                 android:layout_height="237dp"
                 android:hint="Enter the description"
                 android:gravity="top"
@@ -63,7 +63,7 @@
 
         <EditText
                 android:id="@+id/datetimeEditText"
-                android:layout_width="374dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Enter datetime"
                 android:padding="12dp"
@@ -79,7 +79,7 @@
                 tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.0"/>
         <EditText
                 android:id="@+id/prioritySpinner"
-                android:layout_width="374dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Enter the Priority (i.e :LOW ,MEDIUM,HIGH)"
 
@@ -96,7 +96,7 @@
                 tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.0"/>
         <EditText
                 android:id="@+id/statusSpinner"
-                android:layout_width="374dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Enter the Status(COMPLETED,PENDING,NEW)"
                 android:padding="12dp"

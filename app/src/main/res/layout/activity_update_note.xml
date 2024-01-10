@@ -34,7 +34,7 @@
 
     <EditText
             android:id="@+id/updateTitleEditText"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Enter the title"
             android:padding="12dp"
@@ -48,7 +48,7 @@
 
     <EditText
             android:id="@+id/updateContentEditText"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="237dp"
             android:hint="Enter the description"
             android:gravity="top"
@@ -62,7 +62,7 @@
 
     <EditText
             android:id="@+id/updateDatetimeEditText"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Enter datetime"
             android:padding="12dp"
@@ -79,7 +79,7 @@
 
     <EditText
             android:id="@+id/updatePrioritySpinner"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Enter the Priority (i.e :LOW ,MEDIUM,HIGH)"
             android:padding="12dp"
@@ -96,7 +96,7 @@
 
     <EditText
             android:id="@+id/updateStatusSpinner"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Enter the Status(COMPLETED,PENDING,NEW)"
             android:padding="12dp"
