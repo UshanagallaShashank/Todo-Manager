@@ -26,13 +26,14 @@ Follow these steps to run the Todo-List Android app:
 
 1. Clone the repository:
    ```bash
-   git clone [<repository_url>](https://github.com/shashank1325/Todo-Manager.git)
+   git clone https://github.com/shashank1325/Todo-Manager.git
    
 2.Open the project in Android Studio.
 
-3. Build and run the app on an emulator or physical device.
+3.Build and run the app on an emulator or physical device.
 
 4.Make sure to include the SQLite library in your app.
+```bash
    ##### - implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+' 
 
 
