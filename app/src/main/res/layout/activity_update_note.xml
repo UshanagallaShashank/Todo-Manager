@@ -74,40 +74,145 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/updateDatetimeEditText"
-            app:layout_constraintBottom_toTopOf="@id/updatePrioritySpinner"
+            app:layout_constraintBottom_toTopOf="@id/updatePriorityRadioGroup"
             tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.0"/>
 
-    <EditText
-            android:id="@+id/updatePrioritySpinner"
+    <RadioGroup
+            android:id="@+id/updatePriorityRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/updateDatetimeEditText"
+            android:layout_marginTop="30dp">
+
+        <!-- RadioButton for LOW priority -->
+        <RadioButton
+                android:id="@+id/updateLowRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/purple_border"
+                android:padding="12dp"
+                android:backgroundTint="@color/low_color"
+                android:text="LOW"
+                android:textColor="@color/whitishblue"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+        <!-- RadioButton for MEDIUM priority -->
+        <RadioButton
+                android:id="@+id/updateMediumRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:text="MEDIUM"
+                android:background="@drawable/purple_border"
+                android:backgroundTint="@color/medium_color"
+                android:textColor="@color/whitishblue"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+        <!-- RadioButton for HIGH priority -->
+        <RadioButton
+                android:id="@+id/updateHighRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="HIGH"
+                android:background="@drawable/purple_border"
+                android:backgroundTint="@color/bluepurplesec"
+                android:textColor="@color/whitishblue"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+    </RadioGroup>
+    <TextView
+            android:id="@+id/updatePriorityTextView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Enter the Priority (i.e :LOW ,MEDIUM,HIGH)"
+            android:gravity="center_vertical"
             android:padding="12dp"
             android:textSize="18sp"
-            android:layout_below="@id/updateContentEditText"
-            android:layout_marginTop="93dp"
+            android:layout_below="@id/updatePriorityRadioGroup"
+            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:background="@drawable/purple_border"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/updateDatetimeEditText"
-            app:layout_constraintBottom_toTopOf="@id/updateStatusSpinner"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintTop_toBottomOf="@id/updatePriorityRadioGroup"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintHorizontal_bias="0.0"/>
 
-    <EditText
-            android:id="@+id/updateStatusSpinner"
+    <RadioGroup
+            android:id="@+id/updateStatusRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/updatePriorityRadioGroup"
+            android:layout_marginTop="90dp">
+
+        <!-- RadioButton for COMPLETED status -->
+        <RadioButton
+                android:id="@+id/updateCompletedRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/purple_border"
+                android:padding="12dp"
+                android:backgroundTint="@color/low_color"
+                android:text="COMPLETED"
+                android:textColor="@color/whitishblue"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+        <!-- RadioButton for PENDING status -->
+        <RadioButton
+                android:id="@+id/updatePendingRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:text="PENDING"
+                android:background="@drawable/purple_border"
+                android:backgroundTint="@color/medium_color"
+                android:textColor="@color/whitishblue"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+        <!-- RadioButton for NEW status -->
+        <RadioButton
+                android:id="@+id/updateNewRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="NEW"
+                android:background="@drawable/purple_border"
+                android:backgroundTint="@color/bluepurplesec"
+                android:textColor="@color/whitishblue"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+    </RadioGroup>
+    <TextView
+            android:id="@+id/updateStatusTextView"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Enter the Status(COMPLETED,PENDING,NEW)"
+            android:gravity="center_vertical"
             android:padding="12dp"
             android:textSize="18sp"
-            android:layout_below="@id/updateContentEditText"
-            android:layout_marginTop="167dp"
+            android:layout_below="@id/updateStatusRadioGroup"
+            android:layout_marginTop="30dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:background="@drawable/purple_border"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/updatePrioritySpinner"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintTop_toBottomOf="@id/updateStatusRadioGroup"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <!-- Updated TextView for displaying selected status -->
+
 
 </RelativeLayout>

@@ -2,8 +2,10 @@ package com.shashank.todo_list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.RadioGroup
+import android.widget.TextView
 import com.shashank.todo_list.databinding.ActivityAddNoteBinding
+import android.widget.Toast
 
 class AddNoteActivity : AppCompatActivity() {
 
@@ -17,6 +19,31 @@ class AddNoteActivity : AppCompatActivity() {
 
         db = NotesDatabaseHelper(context = this)
 
+        // Accessing RadioGroups and TextViews from AddNoteActivity layout
+        val priorityRadioGroup: RadioGroup = findViewById(R.id.priorityRadioGroup)
+        val prioritySpinner: TextView = findViewById(R.id.prioritySpinner)
+
+        val statusRadioGroup: RadioGroup = findViewById(R.id.statusRadioGroup)
+        val statusTextView: TextView = findViewById(R.id.statusTextView)
+
+        // Adding RadioGroup logic for Priority
+        priorityRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.lowRadioButton -> prioritySpinner.text = "LOW"
+                R.id.mediumRadioButton -> prioritySpinner.text = "MEDIUM"
+                R.id.highRadioButton -> prioritySpinner.text = "HIGH"
+            }
+        }
+
+        // Adding RadioGroup logic for Status
+        statusRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.completedRadioButton -> statusTextView.text = "COMPLETED"
+                R.id.pendingRadioButton -> statusTextView.text = "PENDING"
+                R.id.newRadioButton -> statusTextView.text = "NEW"
+            }
+        }
+
         binding.saveButton.setOnClickListener {
             saveNote()
         }
@@ -25,10 +52,11 @@ class AddNoteActivity : AppCompatActivity() {
     private fun saveNote() {
         val title = binding.titleEditText.text.toString()
         val content = binding.contentEditText.text.toString()
-        val  datetime=binding.contentEditText.text.toString()
-        val  priority=binding.contentEditText.text.toString()
-        val  status=binding.contentEditText.text.toString()
-        val note = Note(0, title = title, content , datetime , priority, status)
+        val datetime = binding.datetimeEditText.text.toString()
+        val priority = binding.prioritySpinner.text.toString()
+        val status = binding.statusTextView.text.toString()
+
+        val note = Note(0, title, content, datetime, priority, status)
         db.insertNote(note)
 
         finish()

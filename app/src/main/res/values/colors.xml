@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#555454</color>
     <color name="white">#FFFFFFFF</color>
     <color name="low_color">#059842</color>
-    <color name="medium_color">#FFC107</color>
+    <color name="medium_color">#CAB602</color>
     <color name="high_color">#FF3D00</color>
     <color name="bluepurle">#728FCE</color>
     <color name="bluepurleprim">#a1a1c1</color>

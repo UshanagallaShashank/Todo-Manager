@@ -5,19 +5,19 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class NotesDatabaseHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION){
+class NotesDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
-companion object {
-    private const val DATABASE_NAME = "notesapp.db"
-    private const val DATABASE_VERSION = 1
-    private const val TABLE_NAME = "allnotes"
-    private const val COLUMN_ID = "id"
-    private const val COLUMN_TITLE = "title"
-    private const val COLUMN_CONTENT = "content"
-    private const val COLUMN_DATETIME = "datetime"
-    private const val COLUMN_PRIORITY = "priority"
-    private const val COLUMN_STATUS = "status"
-}
+    companion object {
+        private const val DATABASE_NAME = "notesapp.db"
+        private const val DATABASE_VERSION = 1
+        private const val TABLE_NAME = "allnotes"
+        private const val COLUMN_ID = "id"
+        private const val COLUMN_TITLE = "title"
+        private const val COLUMN_CONTENT = "content"
+        private const val COLUMN_DATETIME = "datetime"
+        private const val COLUMN_PRIORITY = "priority"
+        private const val COLUMN_STATUS = "status"
+    }
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = "CREATE TABLE  $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TITLE TEXT, $COLUMN_CONTENT TEXT, $COLUMN_DATETIME TEXT, $COLUMN_PRIORITY TEXT, $COLUMN_STATUS TEXT)"
@@ -55,7 +55,9 @@ companion object {
             val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
             val datetime = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DATETIME))
             val priority = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRIORITY))
-            val status = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS))
+            val originalStatus = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS))
+
+            val status = mapStatus(originalStatus)
 
             val note = Note(id, title, content, datetime, priority, status)
             notesList.add(note)
@@ -85,7 +87,6 @@ companion object {
 
         db.close()
     }
-
 
     fun getNoteByID(noteId: Int): Note {
         val db = readableDatabase
@@ -118,4 +119,10 @@ companion object {
         db.close()
     }
 
+    private fun mapStatus(originalStatus: String): String {
+        return when (originalStatus) {
+            "OldStatus" -> "NewStatus"
+            else -> originalStatus
+        }
+    }
 }
