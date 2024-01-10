@@ -38,14 +38,14 @@ Follow these steps to run the Todo-List Android app:
 ## Image Gallery
 
 ### Image 1:Dashboard
-<img src="images/DashBoard.png" alt="Dashboard Image" width="210" height="600"/>
+<img src="images/DashBoard.png" alt="Dashboard Image" width="270" height="600"/>
 
 ### Image 2: Editing page for the todo
-<img src="images/Edit_todo.png" alt="Editing Image" width="210" height="600"/>
+<img src="images/Edit_todo.png" alt="Editing Image" width="270" height="600"/>
 
 
 ### Image 3:AddTodo
-<img src="images/add_todo.png" alt="Add Todo Image" width="210" height="600"/>
+<img src="images/add_todo.png" alt="Add Todo Image" width="270" height="600"/>
 
 
 
